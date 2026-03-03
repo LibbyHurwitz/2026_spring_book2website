@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "serif", "Georgia", Times, serif;
+  font-family: "museo-sans", sans-serif;
     background-color: #fcf9f2; /* Cream background from your image */
     color: #2c2416;
 }
@@ -15,15 +15,18 @@ body {
 .top-header {
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 101;
     background-color: #fcf9f2;
     padding: 20px 40px;
     border-bottom: 1px solid #ddd;
+    width:100%;
 }
 
 .top-header h1 {
     font-size: 1.8rem;
     letter-spacing: 2px;
+font-family: "the-seasons", sans-serif;
+
 }
 
 .top-header p {
@@ -47,6 +50,7 @@ body {
     background-color: #2c2416; /* Dark brown from image */
     color: #fcf9f2;
     padding: 40px 20px;
+    z-index:100;
 }
 
 .sidebar h3 {
@@ -81,6 +85,6 @@ body {
 }
 
 .bg-image {
-
-background-size: cover 
+background-size: cover;
+position:fixed;
 }
