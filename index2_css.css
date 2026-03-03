@@ -1,0 +1,88 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "serif", "Georgia", Times, serif;
+    background-color: #fcf9f2; /* Cream background from your image */
+    color: #2c2416;
+}
+
+/* Sticky Header */
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fcf9f2;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.top-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.top-header p {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Layout Container */
+.layout {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Sticky Sidebar */
+.sidebar {
+    position: sticky;
+    top: 100px; /* Adjust based on header height */
+    width: 250px;
+    height: calc(100vh - 100px);
+    background-color: #2c2416; /* Dark brown from image */
+    color: #fcf9f2;
+    padding: 40px 20px;
+}
+
+.sidebar h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 12px;
+}
+
+.sidebar a {
+    color: #fcf9f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.sidebar a:hover {
+    opacity: 0.6;
+}
+
+/* Main Content (Image Area) */
+.content {
+    flex-grow: 1;
+}
+
+.bg-image {
+    width: 100%;
+    display: block;
+    /* This ensures the image stays sharp and fills space */
+    object-fit: cover; 
+}
