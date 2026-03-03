@@ -1,0 +1,105 @@
+
+/* General Setup */
+body {
+  margin: 0;
+  color: black;
+  font-family: system-ui, sans-serif;
+}
+
+
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Keeps it locked in the center */
+  width: 100%;
+  z-index: 10;
+  pointer-events: none; /* Allows you to click things 'behind' it as it fades */
+  
+  /* Scroll Animation */
+  animation: dissolve-intro linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0vh 60vh; 
+}
+
+@keyframes dissolve-intro {
+  to {
+    opacity: 0;
+    filter: blur(20px);
+    visibility: hidden; /* Fully removes it from view */
+  }
+}
+
+/* 2. The Main Layout (Flexbox) */
+.main-wrapper {
+  display: flex; /* This creates the Sidebar + Content side-by-side */
+  padding-top: 100vh; /* Pushes content down so the intro is seen first */
+}
+
+/* 3. The Left Navigation */
+.sidebar {
+  width: 100px;
+  height: 100vh;
+  position: sticky; /* Keeps the nav on screen as you scroll the work */
+  top: 100px;
+  padding: 40px;
+  border-right: 1px solid #333;
+}
+
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar li { margin-bottom: 20px; }
+.sidebar a { color: white; text-decoration: none; transition: 0.3s; }
+
+
+/* 4. The Flexbox Content Area */
+.content-grid {
+  flex: 1; /* Takes up the remaining space */
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  gap: 20px;
+  padding: 40px;
+  align-content: flex-start;
+}
+
+.site-header {
+  position: fixed; /* Always stays at the top of the screen */
+  width: 100%;
+  z-index: 100; /* Highest layer so it stays above the intro and content */
+  background: rgba(18, 18, 18, 0.5); /* Slight transparency for a modern feel */
+  backdrop-filter: blur(10px); /* Blurs content behind the nav */
+  padding: 20px 0;
+}
+
+/* 2. Flexbox for the Nav Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Pushes left, center (logo), and right apart */
+  align-items: center;
+  max-width: 1200px; /* Or whatever width fits your design */
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.nav-container a {
+  color: white; /* A medium gray */
+  
+}
+/* 1. Remove the bullet point from the list item */
+.project {
+  text-decoration: none; /* Gets rid of the dot */
+  color:white;
+}
+main {
+  flex: 1; 
+  height: 100vh; 
+  overflow: hidden; /* Prevents image "spillover" */
+}
+
+/* 2. Target the image to act as a background cover */
+main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This 'zooms' and 'crops' to fill the area */
+  object-position: center; /* Keeps the center of the photo visible */
+  display: block; /* Removes the tiny gap at the bottom of images */
+}
