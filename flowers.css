@@ -26,7 +26,7 @@ font-weight: 400;
 }
 
 .intro-text {
-  width: 40%;
+  width: 60%;
 }
 
 .intro-text h3 {
@@ -63,4 +63,11 @@ summary {
 p {
   font-size: 0.9rem;
   margin-bottom: 25px;
+}
+
+.justified {
+  text-align: justify;
+  text-justify: inter-word; /* Distributes space between words rather than characters */
+  hyphens: auto;           /* Allows words to break at syllables to fill gaps */
+  line-height: 1.6;
 }
