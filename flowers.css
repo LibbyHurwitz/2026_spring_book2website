@@ -1,10 +1,23 @@
 body {
-  background-color: #fdfaf3; /* Off-white/cream background from image */
-  color: #4a453e; /* Soft dark grey for text */
+  /* This creates a smooth transition from your cream color to a deeper sand color */
+  background: linear-gradient(
+    to bottom, 
+    white 0%,   /* Your current off-white at the very top */
+    white 60%,  /* Stay pure off-white until 60% of the way down */
+    #F3EACF 100%  /* Fade into a soft, muted sand at the bottom */
+  );
+
+  /* Essential for gradients: ensures the background covers the full screen 
+     even if you don't have much text yet */
+  min-height: 100vh;
+  background-attachment: fixed; 
+
+  /* Your existing text styles */
+  color: #4a453e;
   font-family: "museo-sans", sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 20px; /* Large outer margins */
+  padding: 20px;
 }
 
 .editorial-container {
@@ -28,7 +41,6 @@ font-weight: 400;
 .top-header {
     top: 0;
     z-index: 101;
-    background-color: #fcf9f2;
     padding: 10px 20px; /* Increased side padding for breathing room */
     border-bottom: 1px solid #ddd;
     width: 100%;
